@@ -1,0 +1,21 @@
+{
+  "name": "Bot-Raid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^0.3.0",
+    "chalk": "^4.1.0",
+    "colors": "^1.4.0",
+    "discord-api-types": "^0.26.1",
+    "discord-streaming": "^3.0.1",
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security"
+  }
+}
