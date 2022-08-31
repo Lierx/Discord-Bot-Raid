@@ -1,13 +1,13 @@
 {
-  "name": "Bot-Raid",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Discord-Bot-Raid",
+  "version": "2.0.0",
+  "description": "Un bot de raid de discord potente hecho por Katast.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "https://github.com/Katast666",
   "license": "ISC",
   "dependencies": {
     "@discordjs/rest": "^0.3.0",
