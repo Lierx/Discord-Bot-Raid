@@ -77,6 +77,11 @@ Simplemente ejecuta el archvio index.js
 .. code:: 
      node index.js
 
+Porque v12?
+-------
+Con las demás versiones siempre me ha dado problemas con el rate limit pero en esta nunca me ha pasado nada, Si es error mío porfavor corregirme.
+
+
 Créditos.
 -------
 Dueño de el proyecto ¿¿KATA$T??#9200 cualquier problema a informar porfavor usa ``issues``.
