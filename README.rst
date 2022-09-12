@@ -1,5 +1,3 @@
-*Note:* Comando banall en mantencion por errores.
-
 
 Raid Bot
 =========
