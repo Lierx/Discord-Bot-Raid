@@ -71,7 +71,7 @@ Recuerda que si estás en replit puedes usar las variables .env.
 
 Encendido.
 ---------
-Simplemente ejecuta el archvio index.js
+Simplemente ejecuta el archivo index.js
 .. code:: 
      node index.js
 
